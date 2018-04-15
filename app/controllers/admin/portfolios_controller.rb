@@ -48,7 +48,9 @@ class Admin::PortfoliosController < AdminController
 
   def portfolio_params
     params.require(:admin_portfolio).permit(:title, :description, :video_src, :permalink,
-                                            :title_zh_tw, :description_zh_tw, :title_en, :description_en,
+                                            :title_zh_tw, :description_zh_tw,
+                                            :title_en, :description_en,
+                                            :title_zh_cn, :description_zh_cn,
                                             image_attributes: [:id, :src, :alt])
   end
 

@@ -18,9 +18,11 @@ class ApplicationController < ActionController::Base
   end
  
   def extract_locale_from_accept_language_header
-    case request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-    when 'zh'
+    lang = request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first
+    if lang.include?('TW')
       :"zh-TW"
+    elsif lang.include?('CN')
+      :"zh-CN"
     else
       :en
     end
@@ -30,6 +32,8 @@ class ApplicationController < ActionController::Base
     case locale
     when 'zh-TW'
       :"zh-TW"
+    when 'zh-CN'
+      :"zh-CN"  
     else
       :en
     end
