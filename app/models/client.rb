@@ -1,4 +1,4 @@
-class Portfolio < ApplicationRecord
+class Client < ApplicationRecord
 
   # association
   has_one :image, as: :imageable, dependent: :destroy
@@ -6,10 +6,10 @@ class Portfolio < ApplicationRecord
 
   # translation
   extend Mobility
-  translates :title, type: :string, locale_accessors: [:en, :"zh-TW", :"zh-CN"]
+  translates :name, type: :string, locale_accessors: [:en, :"zh-TW", :"zh-CN"]
   translates :description, type: :text, locale_accessors: [:en, :"zh-TW", :"zh-CN"]
 
   # sortable
   include AdminSortable
-
+  
 end

@@ -1,4 +1,4 @@
-<%= simple_form_for admin_portfolio do |f| %>
+<%= simple_form_for admin_team do |f| %>
   <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
     <li class="active"><a role="tab" href="#basics_zh_tw" data-toggle="tab">繁中</a></li>
     <li ><a role="tab" href="#basics_zh_cn" data-toggle="tab">簡中</a></li>
@@ -8,26 +8,20 @@
     <% {zh_tw: 'active', zh_cn: 'fade', en: 'fade'}.each do |key, value| %>
     <div role="tabpanel" class="tab-pane <%= value %>" id="basics_<%= key %>">
       <div class="form-group">
-        <%= f.input :"title_#{key}", label: '標題*', class: "form-control" %>
+        <%= f.input :"name_#{key}", label: '名稱*', class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.input :"description_#{key}", label: '說明*', as: :text, class: "form-control" %>
+        <%= f.input :"description_#{key}", label: '介紹*', as: :text, class: "form-control" %>
       </div>
     </div>
     <% end %>
     <div class="form-group">
-      <%= f.input :video_src, label: 'Vimeo', placeholder: 'Viemo影片編號',class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.input :permalink, label: '連結', class: "form-control" %>
-    </div>
-    <div class="form-group">
       <%= f.simple_fields_for :image do |i| %>
-      <%= i.file_field :src, 'data-default-file': admin_portfolio.image.src, data: {'max-file-size': '200k'}, class: "dropify" %>
+      <%= i.file_field :src, 'data-default-file': admin_team.image.src, data: {'max-file-size': '200k'}, class: "dropify" %>
       <% end %>
     </div>
   </div>
   <%= f.submit "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
-  <%= link_to "取消", admin_portfolios_path, class: "btn btn-default form-control mt-xs-20" %>
+  <%= link_to "取消", admin_teams_path, class: "btn btn-default form-control mt-xs-20" %>
 <% end %>
 <%= render 'layouts/admin/dropify' %>

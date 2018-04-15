@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :portfolios, except: :show  
+    resources :clients, :portfolios, :teams, except: :show  
   end
 
 end

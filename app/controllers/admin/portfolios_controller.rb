@@ -3,7 +3,7 @@ class Admin::PortfoliosController < AdminController
   before_action :find_portfolio, only: [:edit, :update, :destroy]
   
   def index
-    @admin_portfolios = Admin::Portfolio.order(sort: :asc).all
+    @admin_portfolios = Admin::Portfolio.order(sort: :asc)
   end
 
   def new
