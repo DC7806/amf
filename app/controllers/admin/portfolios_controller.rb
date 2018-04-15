@@ -8,7 +8,7 @@ class Admin::PortfoliosController < AdminController
 
   def new
     @admin_portfolio = Admin::Portfolio.new
-    # @admin_portfolio.build_image
+    @admin_portfolio.build_image
   end
 
   def create
@@ -17,7 +17,7 @@ class Admin::PortfoliosController < AdminController
       redirect_to admin_portfolios_path, notice: '新增成功'
     else
       flash[:alert] = '新增失敗'
-      # @admin_portfolio.build_image if @admin_portfolio.image.nil?
+      @admin_portfolio.build_image if @admin_portfolio.image.nil?
       render :new
     end
   end
