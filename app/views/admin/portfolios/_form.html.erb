@@ -1,0 +1,28 @@
+<%= form_for admin_portfolio do |f| %>
+  <ul class="nav nav-pills my-xs-20" role="tablist">
+    <li class="active"><a role="tab" href="#basics_zh_tw" data-toggle="tab">中文</a></li>
+    <li ><a role="tab" href="#basics_en" data-toggle="tab">英文</a></li>
+  </ul>
+  <div class="tab-content mt-xs-20">
+    <% {zh_tw: 'active', en: 'fade'}.each do |key, value| %>
+    <div role="tabpanel" class="tab-pane <%= value %>" id="basics_<%= key %>">
+      <div class="form-group">
+        <%= f.label "title_#{key}", "標題*" %>
+        <%= f.text_field "title_#{key}", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "description_#{key}", "敘述" %>
+        <%= f.text_field "description_#{key}", class: "form-control" %>
+      </div>
+    </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :permalink, "連結*" %>
+      <%= f.text_field :permalink, class: "form-control" %>
+    </div>
+    
+  </div>
+  <%= f.submit "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
+  <%= link_to "取消", admin_portfolios_path, class: "btn btn-default form-control mt-xs-20" %>
+<% end %>
+<%#= render 'layouts/dropify' %>

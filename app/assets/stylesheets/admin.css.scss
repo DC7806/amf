@@ -1,0 +1,69 @@
+/*
+*= require font-awesome
+*= require AdminLTE
+*= require_self
+*= require ./share/spacing
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+img {
+  max-width: 100%;
+}
+
+tbody > tr:hover {
+    background: #fff
+  }
+td {
+	vertical-align: middle!important
+}
+.wt-100{
+	width:100%
+}
+.text-area{
+	min-height:160px
+}
+.cke_contents{
+	height:300px !important
+}
+
+.btn-pseudo {
+  cursor: unset;
+}
+
+@media only screen and (max-width: 767px){
+	.btn-add-new, .btn-cancel{
+		width: 100%;
+	}
+	.xs-transform tbody > tr {
+      display: block;
+      background: #e7e7e7;
+      border: 1px solid #e7e7e7;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .xs-transform > tbody > tr > td{
+      display: block;
+      border-top: none;
+      text-align: center;
+    }
+}
+
+// nav pill buttons
+.nav-pills > li > a {
+  padding: 6px 12px;
+}
+
+
+// checkbox
+.btn-checkbox:not(:first-of-type) {
+  margin-left: 10px;
+}
+.btn-checkbox > span {
+  margin-left: 5px
+}
+
+// text_field
+.text-area {
+  min-height: 140px;
+}
