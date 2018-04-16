@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>重置密碼</h2>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-group">
+              <%= f.input :email, required: true, autofocus: true, label: false, placeholder: '輸入帳號Email', input_html: { class: 'form-control' } %>
+            </div>
+            <div class="form-group">
+              <%= f.button :submit, "確認", class: 'btn btn-default form-control' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>

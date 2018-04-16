@@ -19,9 +19,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Corp</b></span>
+      <span class="logo-mini"><b>AMF</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Corp</b></span>
+      <span class="logo-lg"><b>AMF Creative</b></span>
     </a>
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -36,14 +36,14 @@
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs"><%# if admin_user_signed_in?  %><%#= current_admin_user.email %><%# end %></span>
+              <span class="hidden-xs"><% if admin_user_signed_in?  %><%= current_admin_user.email %><% end %></span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div>
-                  <%#= link_to "修改密碼", edit_admin_user_registration_path, class: "btn btn-default btn-flat form-control mb-xs-10" %>
-                  <%#= admin_session %>
+                  <%= link_to "修改密碼", edit_admin_user_registration_path, class: "btn btn-default btn-flat form-control mb-xs-10" %>
+                  <%= admin_session %>
                 </div>
               </li>
             </ul>
