@@ -65,8 +65,8 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><%#= link_to '輪播圖', admin_carousels_path %></li>
-            <li><%#= link_to '版位內容', admin_homepage_index_path %></li>
+            <li><%= link_to '關於我們簡介', edit_admin_content_path(@homepage_about.id) %></li>
+            <li><%= link_to '作品集簡介', edit_admin_content_path(@homepage_portfolio.id) %></li>
           </ul>
         </li>
         <li>
@@ -86,6 +86,17 @@
             <%= content_tag :i, '', class: 'fa fa-cog' %>
             <%= content_tag :span, '客戶' %>
           <% end %>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-cog"></i> <span>關於我們</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><%= link_to '簡介', edit_admin_content_path(@about_intro.id) %></li>
+            <li><%= link_to '聯絡資訊', admin_about_us_path %></li>
+          </ul>
         </li>
       </ul>
       <!-- /.sidebar-menu -->

@@ -1,0 +1,27 @@
+<%= simple_form_for @admin_content do |f| %>
+  <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
+    <li class="active"><a role="tab" href="#basics_zh_tw" data-toggle="tab">繁中</a></li>
+    <li ><a role="tab" href="#basics_zh_cn" data-toggle="tab">簡中</a></li>
+    <li ><a role="tab" href="#basics_en" data-toggle="tab">英文</a></li>
+  </ul>
+  <div class="tab-content mt-xs-20">
+    <% {zh_tw: 'active', zh_cn: 'fade', en: 'fade'}.each do |key, value| %>
+    <div role="tabpanel" class="tab-pane <%= value %>" id="basics_<%= key %>">
+      <!-- <div class="form-group">
+        <%#= f.input :"title_#{key}", label: '名稱*', class: "form-control" %>
+      </div> -->
+      <div class="form-group">
+        <%= f.input :"description_#{key}", label: @admin_content.section, as: :ckeditor %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.simple_fields_for :image do |i| %>
+    <%= i.file_field :src, 'data-default-file': @admin_content.image.src, data: {'max-file-size': '200k'}, class: "dropify" %>
+    <% end %>
+  </div>
+  <%= f.submit "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
+<% end %>
+
+<%= render 'layouts/admin/dropify' %>

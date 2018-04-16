@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416101641) do
+ActiveRecord::Schema.define(version: 20180416151512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 20180416101641) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_publish", default: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "page"
+    t.string "section"
+    t.string "title"
+    t.text "description"
+    t.string "contentable_type"
+    t.bigint "contentable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contentable_type", "contentable_id"], name: "index_contents_on_contentable_type_and_contentable_id"
   end
 
   create_table "images", force: :cascade do |t|

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'portfolios#index'
-    resources :clients, :portfolios, :teams, except: :show  
+    resources :clients, :contents, :portfolios, :teams, except: :show  
+    match 'about-us', to: 'static_contents#about', via: [:get, :patch]
   end
 
 end

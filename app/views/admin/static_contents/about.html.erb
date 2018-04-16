@@ -1,0 +1,21 @@
+<%= form_tag controller: 'admin/static_contents', action: 'about' do %>
+<%= hidden_field_tag '_method', 'patch' %>
+  <ul class="nav nav-tabs nav-justified my-xs-20" role="tablist">
+    <li class="active"><a role="tab" href="#basics_zh_tw" data-toggle="tab">繁中</a></li>
+    <li ><a role="tab" href="#basics_zh_cn" data-toggle="tab">簡中</a></li>
+    <li ><a role="tab" href="#basics_en" data-toggle="tab">英文</a></li>
+  </ul>
+  <div class="tab-content mt-xs-20">
+    <% {zh_tw: 'active', zh_cn: 'fade', en: 'fade'}.each do |key, value| %>
+    <div role="tabpanel" class="tab-pane <%= value %>" id="basics_<%= key %>">
+      <% @about.fetch(key.to_s).each do |k1, v1| %>
+        <div class="form-group">
+          <%= label_tag k1, k1 %>
+          <%= text_field_tag "about[#{key}][#{k1}]", v1, class: 'form-control' %>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <%= submit_tag "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
+<% end %>
