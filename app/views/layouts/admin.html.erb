@@ -98,6 +98,12 @@
             <li><%= link_to '聯絡資訊', admin_about_us_path %></li>
           </ul>
         </li>
+        <li>
+          <%= link_to admin_system_path do%>
+            <%= content_tag :i, '', class: 'fa fa-cog' %>
+            <%= content_tag :span, '系統設定' %>
+          <% end %>
+        </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

@@ -1,0 +1,9 @@
+---
+zh_tw:
+  site_name: '1'
+zh_cn:
+  site_name: '2'
+en:
+  site_name: '3'
+tracking:
+  ga_id: '111'

@@ -2,15 +2,17 @@ class AdminController < ApplicationController
   
   #devise
   before_action :authenticate_admin_user!, :find_contents
+  
   #overwrite default_url_options
   include DeviseAdminLocale
 
   private
 
   def find_contents
-    @homepage_about = Content.where(page: 'homepage').where(section: 'about').first
-    @homepage_portfolio = Content.where(page: 'homepage').where(section: 'portfolio').first 
-    @about_intro = Content.where(page: 'about-us').where(section: 'intro').first 
+    content = Content.where(page: ['homepage', 'about-us'])
+    @homepage_about = content.select{ |item| item.page == 'homepage' && item.section == 'about'}.first
+    @homepage_portfolio = content.select{ |item| item.page == 'homepage' && item.section == 'portfolio'}.first
+    @about_intro = content.select{ |item| item.page == 'about-us' && item.section == 'intro'}.first
   end
   
 end
