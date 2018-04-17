@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h1><%= @admin_inquiry.subject %></h1>
+    <span><%= @admin_inquiry.created_at.to_date %></span>
+    <h2>聯絡人資訊</h2>
+    <p>稱謂：<%= @admin_inquiry.prefix %></p>
+    <p>姓氏：<%= @admin_inquiry.prefix %></p>
+    <p>姓名：<%= @admin_inquiry.prefix %></p>
+    <h2>聯絡方式</h2>
+    <p>電話：<%= @admin_inquiry.number %></p>
+    <p>信箱：<%= @admin_inquiry.email %></p>
+    <h2>留言內容</h2>
+    <p><%= @admin_inquiry.message %></p>
+  </div>
+</div>

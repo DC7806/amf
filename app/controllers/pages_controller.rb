@@ -4,9 +4,7 @@ class PagesController < ApplicationController
   end
 
   def about
-  end
-
-  def contact
+    @inquiry = Inquiry.new
   end
 
 end

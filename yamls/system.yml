@@ -5,5 +5,6 @@ zh_cn:
   site_name: '2'
 en:
   site_name: '3'
-tracking:
+others:
+  email: dachang.dev@gmail.com
   ga_id: '111'

@@ -1,0 +1,27 @@
+<%= form_for inquiry do |f| %>
+  <div class="form-inside mt-sm-30">
+    <h2 class="text-center"><%= t('frontend.contact.contact_us') %></h2>
+    <div class="form-group col-sm-12 mt-sm-15">
+      <%= f.select :prefix, options_for_select([[t('frontend.contact.mr')],[t('frontend.contact.ms')]]), {include_blank: " - #{t('frontend.contact.prefix')} - "}, class: "form-control" %>
+    </div>
+    <%= name_order f, I18n.locale %>
+    <div class="form-group col-sm-6">
+      <%= f.label :number, t('frontend.contact.number'+'*') %>
+      <%= f.text_field :number, class: "form-control" %>      
+    </div>
+    <div class="form-group col-sm-6">
+      <%= f.label :email, t('frontend.contact.email'+'*') %>
+      <%= f.text_field :email, class: "form-control" %> 
+    </div>
+    <div class="form-group col-sm-12">
+      <%= f.label :message, t('frontend.contact.message'+'*') %>
+      <%= f.text_area :message, class: "text-area form-control" %>
+    </div>
+    <div class="form-group col-sm-6">
+      <%= recaptcha_tags %>  
+    </div>
+    <div class="form-group col-sm-6">
+      <%= f.submit t('frontend.button.submit'), class: "btn btn-md btn-style-2 width-100" %>
+    </div>
+  </div>
+<% end %>

@@ -13,6 +13,7 @@ class AdminController < ApplicationController
     @homepage_about = content.select{ |item| item.page == 'homepage' && item.section == 'about'}.first
     @homepage_portfolio = content.select{ |item| item.page == 'homepage' && item.section == 'portfolio'}.first
     @about_intro = content.select{ |item| item.page == 'about-us' && item.section == 'intro'}.first
+    @site_name = YAML::load_file("#{Rails.root}/yamls/system.yml").fetch('zh_tw').values.first
   end
   
 end

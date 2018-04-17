@@ -18,9 +18,15 @@
     <% end %>
   </div>
   <div class="form-group">
-  <% @system.fetch('tracking').each do |k1, v1| %>
+  <% @system.fetch('others').slice('ga_id').each do |k1, v1| %>
     <%= label_tag k1, 'Google Analytics 追蹤碼' %>
-    <%= text_field_tag "system[tracking][#{k1}]", v1, class: 'form-control' %>
+    <%= text_field_tag "system[others][#{k1}]", v1, class: 'form-control' %>
+  <% end %>
+  </div>
+  <div class="form-group">
+  <% @system.fetch('others').slice('email').each do |k1, v1| %>
+    <%= label_tag k1, '聯絡email' %>
+    <%= text_field_tag "system[others][#{k1}]", v1, class: 'form-control' %>
   <% end %>
   </div>
   <%= submit_tag "確認送出", class: "btn btn-primary form-control mt-xs-20" %>

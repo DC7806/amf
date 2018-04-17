@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><%#= @site_name %></title>
+  <title><%= @site_name %></title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
@@ -97,6 +97,12 @@
             <li><%= link_to '簡介', edit_admin_content_path(@about_intro.id) %></li>
             <li><%= link_to '聯絡資訊', admin_about_us_path %></li>
           </ul>
+        </li>
+        <li>
+          <%= link_to admin_inquiries_path do%>
+            <%= content_tag :i, '', class: 'fa fa-cog' %>
+            <%= content_tag :span, '訊息' %>
+          <% end %>
         </li>
         <li>
           <%= link_to admin_system_path do%>

@@ -15,6 +15,8 @@ module Amf
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Taipei'
+    # delay job
+    config.active_job.queue_adapter = :delayed_job
     # I18n
     config.i18n.available_locales = %i[en zh-TW zh-CN]
     config.i18n.default_locale = :"zh-TW"
