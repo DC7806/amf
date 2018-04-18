@@ -1,0 +1,11 @@
+<%= form_tag path, method: :get, class: "mt-xs-20" do %>
+  <div class="input-group">
+    <%= text_field_tag :query, params[:query], placeholder: "搜尋", class: "form-control"%>
+    <span class="input-group-btn">
+      <%= button_tag '', name: nil, class: "btn btn-default" do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    </span> 
+  </div>
+<% end %>  
+<%= link_to "顯示全部", path, class: "btn btn-default form-control mt-xs-10 mb-xs-20" %>

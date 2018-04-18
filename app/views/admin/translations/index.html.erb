@@ -1,1 +1,16 @@
-<%= @total %>
+<%= render 'layouts/admin/search', path: admin_translations_path %>
+<%= form_for :translations, url: update_all_admin_translations_path, html: {method: :patch} do %>
+  <% @admin_translations.each do |translation| %>
+  <div class="form-group col-sm-4">
+    <%= fields_for "admin_translation[]", translation do |f| %>
+    <%#= fields_for "admin_translation[#{translation.id}]", translation do |f| %>
+    <!-- index: option omitted -->
+      <span><%= translation.key %></span> 
+      <%= f.text_field :tw, placeholder: '繁中', class: 'form-control mt-xs-5' %>
+      <%= f.text_field :cn, placeholder: '簡中', class: 'form-control mt-xs-5' %>
+      <%= f.text_field :en, placeholder: '英文', class: 'form-control mt-xs-5' %>
+    <% end %>
+  </div>
+  <% end %>
+  <%= submit_tag '確認送出', class: 'btn btn-primary form-control mt-xs-20' %>
+<% end %>

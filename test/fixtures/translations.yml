@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  key: MyString
+  zh-TW: MyString
+  zh-CN: MyString
+  en: MyString
+
+two:
+  key: MyString
+  zh-TW: MyString
+  zh-CN: MyString
+  en: MyString

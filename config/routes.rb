@@ -17,7 +17,12 @@ Rails.application.routes.draw do
     resources :inquiries, only: [:index, :show, :destroy]
     match 'about-us', to: 'static_contents#about', via: [:get, :patch]
     match 'system', to: 'static_contents#system', via: [:get, :patch]
-    match 'translations', to: 'translations#index', via: [:get, :patch]
+    resources :translations, only: :index do
+      collection do
+        patch 'update_all'
+      end
+    end
+
   end
 
 end
