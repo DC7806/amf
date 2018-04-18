@@ -1,2 +1,16 @@
 en:
-  hello: "Hello world"
+  frontend:
+    nav:
+      portfolios:
+      about-us:
+    # contact:
+    #   mr:
+    #   ms:
+    #   name:
+    #   number:
+    #   email:
+    #   message:  
+    # buttons:
+    #   submit:
+    #   learnmore:
+    #   enter:

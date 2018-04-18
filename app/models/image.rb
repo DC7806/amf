@@ -6,4 +6,7 @@ class Image < ApplicationRecord
   # carrierwave
   mount_uploader :src, ImageUploader
 
+  extend Mobility
+  translates :alt, type: :string, locale_accessors: [:en, :"zh-TW", :"zh-CN"]
+  
 end

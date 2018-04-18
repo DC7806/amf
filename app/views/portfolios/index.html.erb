@@ -1,6 +1,17 @@
+<div class="container">
 <% @portfolios.each do |port| %>
-<div>
-  <h1><%= port.title %></h1>
-  <p><%= port.description %></p>
-</div>
+  <div class="my-xs-20">
+    <%= link_to "https://vimeo.com/#{port.video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>  
+      <%= image_tag port.image.src, alt: port.image.alt, style: 'width: 100%' %>
+    <% end %>
+    <h1><%= port.title %></h1>
+    <p><%= port.description %></p>
+  </div>
 <% end %>
+</div>
+
+<script>
+  $( document ).on('turbolinks:load', function() {
+    $('.venobox').venobox(); 
+  });
+</script>
