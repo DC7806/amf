@@ -1,0 +1,16 @@
+<%= simple_form_for @admin_translation do |f| %>
+  <div class="form-group mt-xs-60">
+    <%= f.input :key, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :tw, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :cn, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.input :en, class: "form-control" %>
+  </div>
+  <%= f.submit "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
+  <%= link_to "取消", admin_translations_path, class: "btn btn-default form-control mt-xs-20" %>
+<% end %>

@@ -1,20 +1,21 @@
 ---
 en:
+  qq: qq
   frontend:
-    nav:
-      portfolios: Portfolios
-      about-us: About AMF
-    contact:
-      prefix: Prefix
-      mr: Mr.
-      ms: Ms.
-      first_name: First Name
-      last_name: Last Name
-      number: Number
-      email: Email
-      subject: Subject
-      message: Message
     buttons:
-      submit: SUBMIT
-      learnmore: LEARN MORE
-      enter: ENTER
+      enter: Enter
+      learnmore: ''
+      submit: ''
+    contact:
+      email: ''
+      first_name: ''
+      last_name: ''
+      message: ''
+      mr: ''
+      ms: ''
+      number: ''
+      prefix: ''
+      subject: ''
+    nav:
+      about-us: ''
+      portfolios: ''

@@ -1,6 +1,6 @@
 <%= form_for inquiry do |f| %>
   <div class="form-inside mt-sm-30">
-    <h2 class="text-center"><%= t('frontend.contact.contact_us') %></h2>
+    <h2 class="text-center"><%#= t('frontend.contact.contact_us') %></h2>
     <div class="form-group col-sm-12 mt-sm-15">
       <%= f.select :prefix, options_for_select([[t('frontend.contact.mr')],[t('frontend.contact.ms')]]), {include_blank: " - #{t('frontend.contact.prefix')} - "}, class: "form-control" %>
     </div>

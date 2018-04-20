@@ -18,12 +18,12 @@ src.each do |k1, v1|
     Translation.create(key: "frontend.#{k1}.#{k2}", tw: v2)
   end
 end
-
-# ['zh-CN', 'en'].each do |lang|
-#   src = YAML::load_file("#{Rails.root}/config/locales/#{lang}.yml").dig(lang, 'frontend')
-#   src.each do |k1, v1|
-#     v1.each do |k2, v2|
-#       Translation.where(key: "frontend.#{k1}.#{k2}").first.update("#{lang}": v2)
-#     end
-#   end
-# end
+# en not working
+{'zh-CN': 'cn', 'en': 'en'}.each do |file_name, lang|
+  src = YAML::load_file("#{Rails.root}/config/locales/#{file_name}.yml").dig(file_name.to_s, 'frontend')
+  src.each do |k1, v1|
+    v1.each do |k2, v2|
+      Translation.where(key: "frontend.#{k1}.#{k2}").first.update("#{lang}": v2)
+    end
+  end
+end

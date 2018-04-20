@@ -110,11 +110,16 @@
             <%= content_tag :span, '系統設定' %>
           <% end %>
         </li>
-        <li>
-          <%= link_to admin_translations_path do%>
-            <%= content_tag :i, '', class: 'fa fa-cog' %>
-            <%= content_tag :span, '語言管理' %>
-          <% end %>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-cog"></i> <span>語言管理</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><%= link_to '更新語言', admin_translations_path %></li>
+            <li><%= link_to '新增語言', new_admin_translation_path %></li>
+          </ul>
         </li>
       </ul>
       <!-- /.sidebar-menu -->
