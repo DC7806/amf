@@ -10,7 +10,6 @@ end
   end
 end
 
-
 # create translations with data from locale ymls
 src = YAML::load_file("#{Rails.root}/config/locales/zh-TW.yml").dig('zh-TW', 'frontend')
 src.each do |k1, v1|
@@ -26,4 +25,8 @@ end
       Translation.where(key: "frontend.#{k1}.#{k2}").first.update("#{lang}": v2)
     end
   end
+end
+
+['homepage', 'portfolios', 'about-us'].each do |page|
+  Metum.create(page: page)
 end

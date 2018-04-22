@@ -22,7 +22,7 @@ Rails.application.routes.draw do
         patch 'update_all'
       end
     end
-
+    resources :meta, only: [:index, :edit, :update]
   end
 
 end

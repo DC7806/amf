@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418151027) do
+ActiveRecord::Schema.define(version: 20180421141842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,20 @@ ActiveRecord::Schema.define(version: 20180418151027) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "subject"
+  end
+
+  create_table "meta", force: :cascade do |t|
+    t.string "page"
+    t.string "title"
+    t.text "description"
+    t.string "og_title"
+    t.text "og_description"
+    t.text "og_image"
+    t.string "metumble_type"
+    t.bigint "metumble_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["metumble_type", "metumble_id"], name: "index_meta_on_metumble_type_and_metumble_id"
   end
 
   create_table "mobility_string_translations", force: :cascade do |t|

@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
+  
   protect_from_forgery with: :exception
   
-  before_action :set_locale, :default_url_options
+  before_action :set_locale, :default_url_options, :site_settings
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -47,5 +48,39 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
+  def site_settings
+    
+    settings = YAML::load_file("#{Rails.root}/yamls/system.yml")
+    case I18n.locale
+    when :'zh-TW' then @site_name = settings['zh_tw']['site_name']
+    when :'zh-CN' then @site_name = settings['zh_cn']['site_name']
+    when :en      then @site_name = settings['en']['site_name']
+    end
+
+    @favicon = Image.where(section: "favicon").first.src.url
+
+  end
+
+  def page_meta
+    if action_name == 'index'
+      @title = Metum.find_page(controller_name).title
+      @meta_desc = Metum.find_page(controller_name).og_description
+      @og = { site_name:   @site_name,
+              type:        controller_name,
+              title:       Metum.find_page(controller_name).og_title,
+              url:         request.url,
+              description: Metum.find_page(controller_name).og_description,
+              image:       (root_url + Metum.find_page(controller_name).og_image.url if Metum.find_page(controller_name).og_image.url.present?)}
+    elsif controller_name == 'pages'
+      @title = Metum.find_page(action_name).title
+      @meta_desc = Metum.find_page(action_name).description
+      @og = { site_name:   @site_name,
+              type:        action_name,
+              title:       Metum.find_page(action_name).og_title,
+              url:         request.url,
+              description: Metum.find_page(action_name).og_description,
+              image:       (root_url+Metum.find_page(action_name).og_image.url if Metum.find_page(action_name).og_image.url.present?)}
+    end
+  end
 
 end

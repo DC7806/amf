@@ -1,0 +1,25 @@
+<table class="table xs-transform mt-xs-60">
+  <thead class="hidden-xs">
+    <tr>
+      <td class="col-sm-1">網頁</td>
+      <td class="col-sm-2">OG Image</td>
+      <td class="col-sm-3">網頁標題</td>
+      <td class="col-sm-4">網頁說明</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_meta.each do |metum|%>
+    <tr>
+      <td class="col-sm-1"><%= metum.page %></td>
+      <td class="col-sm-2"><%= image_tag metum.og_image %></td>
+      <td class="col-sm-3"><%= metum.title %></td>
+      <td class="col-sm-4"><%= metum.description %></td>
+      <td class="col-sm-2 text-center">
+        <%= link_to edit_admin_metum_path(metum), class: "btn btn-primary" do %>
+          <i class="fa fa-pencil fa-fw"></i>
+        <% end %>
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

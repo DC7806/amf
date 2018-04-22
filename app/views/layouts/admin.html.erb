@@ -105,6 +105,12 @@
           <% end %>
         </li>
         <li>
+          <%= link_to admin_meta_path do%>
+            <%= content_tag :i, '', class: 'fa fa-cog' %>
+            <%= content_tag :span, 'SEO' %>
+          <% end %>
+        </li>
+        <li>
           <%= link_to admin_system_path do%>
             <%= content_tag :i, '', class: 'fa fa-cog' %>
             <%= content_tag :span, '系統設定' %>
