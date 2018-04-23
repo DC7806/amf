@@ -56,9 +56,10 @@ class ApplicationController < ActionController::Base
     when :'zh-CN' then @site_name = settings['zh_cn']['site_name']
     when :en      then @site_name = settings['en']['site_name']
     end
-
+    @footer_site_name = settings['en']['site_name']
     @favicon = Image.where(section: "favicon").first.src.url
-
+    @logo = Image.where(section: "logo").first.src.url
+    
   end
 
   def page_meta

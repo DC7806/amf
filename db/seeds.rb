@@ -11,22 +11,26 @@ end
 end
 
 # create translations with data from locale ymls
-src = YAML::load_file("#{Rails.root}/config/locales/zh-TW.yml").dig('zh-TW', 'frontend')
-src.each do |k1, v1|
+src_tw = YAML::load_file("#{Rails.root}/config/locales/zh-TW.yml").dig('zh-TW', 'frontend')
+src_tw.each do |k1, v1|
   v1.each do |k2, v2|
     Translation.create(key: "frontend.#{k1}.#{k2}", tw: v2)
   end
 end
-# en not working
-{'zh-CN': 'cn', 'en': 'en'}.each do |file_name, lang|
-  src = YAML::load_file("#{Rails.root}/config/locales/#{file_name}.yml").dig(file_name.to_s, 'frontend')
-  src.each do |k1, v1|
-    v1.each do |k2, v2|
-      Translation.where(key: "frontend.#{k1}.#{k2}").first.update("#{lang}": v2)
-    end
-  end
+
+def find_value key, locale
+  chain = key.split('.')
+  locale.dig(chain[0],chain[1],chain[2])
 end
 
+src_cn = YAML::load_file("#{Rails.root}/config/locales/zh-CN.yml").dig('zh-CN')
+src_en = YAML::load_file("#{Rails.root}/config/locales/en.yml").dig('en')
+
+Translation.all.each do |translation|
+  Translation.where(key: translation.key).first.update_columns(cn: find_value(translation.key, src_cn), en: find_value(translation.key, src_en))
+end
+
+# page meta
 ['homepage', 'portfolios', 'about-us'].each do |page|
   Metum.create(page: page)
 end

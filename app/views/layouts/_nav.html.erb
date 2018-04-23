@@ -1,0 +1,37 @@
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <div class="nav-bar">
+      <div class="module left">
+        <%= link_to root_path do %>
+          <!-- <img class="logo logo-light" alt="Foundry" src="img/logo-light.png" /> -->
+          <%= image_tag @logo, alt: 'AMF Creative Logo', class: 'logo logo-dark'%>
+        <% end %>
+      </div>
+      <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+        <i class="ti-menu"></i>
+      </div>
+      <div class="module-group right">
+        <div class="module left">
+          <ul class="menu">
+            <li>
+              <%= link_to t('frontend.nav.portfolios'), portfolios_path %>
+            </li>
+            <li>
+              <%= link_to t('frontend.nav.about-us'), about_us_path %>
+            </li>
+          </ul>
+        </div>
+          <!--end of menu module-->
+        <div class="module widget-handle language left">
+          <ul class="menu">
+            <li class="has-dropdown">
+              <%= nav_langs %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--end of module group-->
+    </div>
+  </nav>
+</div>

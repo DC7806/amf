@@ -1,21 +1,20 @@
 ---
 en:
-  qq: qq
   frontend:
     buttons:
+      learnmore: Learn More
+      submit: Summit
       enter: Enter
-      learnmore: ''
-      submit: ''
     contact:
-      email: ''
-      first_name: ''
-      last_name: ''
-      message: ''
-      mr: ''
-      ms: ''
-      number: ''
-      prefix: ''
-      subject: ''
+      email: email
+      first_name: First Name
+      last_name: Last Name
+      message: Message
+      ms: Ms.
+      number: Number
+      prefix: Prefix
+      subject: Subject
+      mr: Mr.
     nav:
-      about-us: ''
-      portfolios: ''
+      about-us: About Us
+      portfolios: Portfolios

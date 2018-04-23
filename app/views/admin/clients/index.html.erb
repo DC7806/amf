@@ -5,14 +5,14 @@
       <td class="col-sm-1"></td>
       <td class="col-sm-2">圖片</td>
       <td class="col-sm-3">名稱</td>
-      <td class="col-sm-4">介紹</td>
+      <td class="col-sm-4">說明</td>
     </tr>
   </thead>
   <tbody class="sortable">
     <% @admin_clients.each_with_sortable_id do |client, sortable_id|%>
     <tr id="<%= sortable_id %>">
       <td class="col-sm-1 text-center"><i class="fa fa-arrows fa-2x"></i></td>
-      <td class="col-sm-2"><%= admin_index_image client %></td>
+      <td class="col-sm-2"><div class="col-sm-10 col-sm-offset-1"><%= admin_index_image client %></div></td>
       <td class="col-sm-3"><%= client.name %></td>
       <td class="col-sm-4"><%= client.description %></td>
       <td class="col-sm-2 text-center">
