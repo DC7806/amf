@@ -1,9 +1,9 @@
 <div class="nav-container">
-  <a id="top"></a>
   <nav>
     <div class="nav-bar">
       <div class="module left">
         <%= link_to root_path do %>
+        <%#= link_to root_path, 'data-turbolinks': false do %>
           <!-- <img class="logo logo-light" alt="Foundry" src="img/logo-light.png" /> -->
           <%= image_tag @logo, alt: 'AMF Creative Logo', class: 'logo logo-dark'%>
         <% end %>
@@ -22,8 +22,9 @@
             </li>
           </ul>
         </div>
-          <!--end of menu module-->
-        <div class="module widget-handle language left">
+        <!--end of menu module-->
+        <!-- <div class="module widget-handle language left"> -->
+        <div class="module left pl-sm-0">  
           <ul class="menu">
             <li class="has-dropdown">
               <%= nav_langs %>

@@ -11,7 +11,7 @@ class Metum < ApplicationRecord
   translates :description, :og_description, type: :text, locale_accessors: [:en, :"zh-TW", :"zh-CN"]
 
   def self.find_page page
-    where(page: page).first
+    where(page: page).eager_load(:string_translations, :text_translations).first
   end
 
 end

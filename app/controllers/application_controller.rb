@@ -57,9 +57,11 @@ class ApplicationController < ActionController::Base
     when :en      then @site_name = settings['en']['site_name']
     end
     @footer_site_name = settings['en']['site_name']
-    @favicon = Image.where(section: "favicon").first.src.url
-    @logo = Image.where(section: "logo").first.src.url
     
+    frontend_images = Image.where(section: ['favicon', 'logo'])
+    @favicon = frontend_images.select{ |img| img.section == 'favicon'}.first.src
+    @logo = frontend_images.select{ |img| img.section == 'logo'}.first.src
+
   end
 
   def page_meta

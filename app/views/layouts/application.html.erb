@@ -13,8 +13,10 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class="main-wrapper">
+      <%= render 'layouts/nav' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

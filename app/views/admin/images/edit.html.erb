@@ -1,0 +1,8 @@
+<%= simple_form_for @admin_image do |f| %>
+  <div class="form-group mt-xs-60">
+    <%= f.file_field :src, 'data-default-file': @admin_image.src, data: {'max-file-size': '200k'}, class: "dropify" %>
+  </div>
+  <%= f.submit "確認送出", class: "btn btn-primary form-control mt-xs-20" %>
+<% end %>
+
+<%= render 'layouts/admin/dropify' %>

@@ -1,6 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require flexslider
+//= require twitterfetcher
+//= require spectragram
+//= require smooth_scroll
+//= require scripts
 //= require venobox
 //= require background_video
 //= require turbolinks

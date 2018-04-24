@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :admin, path: Figaro.env.admin_path do
     root 'portfolios#index'
     resources :clients, :contents, :portfolios, :teams, except: :show  
-    resources :images, only: :update
+    resources :images, only: [:edit, :update]
     resources :inquiries, only: [:index, :show, :destroy]
     match 'about-us', to: 'static_contents#about', via: [:get, :patch]
     match 'system', to: 'static_contents#system', via: [:get, :patch]

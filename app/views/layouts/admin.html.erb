@@ -65,6 +65,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
+            <li><%= link_to '滿版Banner', edit_admin_image_path(@homepage_banner.id) %></li>
             <li><%= link_to '關於我們簡介', edit_admin_content_path(@homepage_about.id) %></li>
             <li><%= link_to '作品集簡介', edit_admin_content_path(@homepage_portfolio.id) %></li>
           </ul>

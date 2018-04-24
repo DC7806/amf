@@ -1,106 +1,91 @@
-<style type="text/css">
+<section class="full-screen" style="background-image: url(<%= @homepage_banner %>)"></section>
 
-/* Make elements as high as viewport */
+<section class="section-40">
+  <container>
+    <row>
+      <div class="col-sm-10 col-sm-offset-1 text-center">
+        <h1>AMF Creative</h1>
+        <p><%= @homepage_about %></p> 
+      </div>
+    </row>
+  </container>
+</section>
 
-html {
-  height: 100%;
-}
-
-body {
-  position: relative;
-  height: 100%;
-}
-
-/* Video background */
-
-.videobg {
-  position: relative;
-  width: 100%; /* Set video container element width here */
-  height: 100%; /* Set video container element height here */
-  overflow: hidden;
-  background: #111; /* bg color, if video is not high enough */
-}
-
-/* horizontally center the video */
-.videobg-width {
-  position: absolute;
-  width: 100%; /* Change width value to cover more area*/
-  height: 100%;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
-}
-
-/* set video aspect ratio and vertically center */
-.videobg-aspect {
-  position: absolute;
-  width: 100%;
-  height: 0;
-  top: -9999px;
-  bottom: -9999px;
-  margin: auto;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  overflow: hidden;
-  
-}
-
-.videobg-make-height {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-}
-
-.videobg-hide-controls {
-  box-sizing: content-box;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  /* Vimeo timeline and play button are ~55px high */
-  padding: 55px 97.7777px; /* 16:9 ratio */
-  top: -55px; 
-  left: -97.7777px; /* 16:9 ratio */
-}
-
-.videobg iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  border: 0 none;
-}
-
-.video-text {
-  position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 50%;
-}
-</style>
-<div class="videobg">
-  <div class="videobg-width">
-    <div class="videobg-aspect">
-      <div class="videobg-make-height">
-        <div class="videobg-hide-controls">
-            <iframe src="https://player.vimeo.com/video/8970192?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<section class="section-40">
+  <div class="container">
+    <div class="row text-center">
+      <div class="my-xs-20">
+        <%= @homepage_portfolio %>
+      </div>
+      <div class="image-tile hover-tile mb-sm-0">
+        <%= link_to "https://vimeo.com/#{@portfolios[0].video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
+          <%= image_tag @portfolios[0].image.src, alt: @portfolios[0].image.alt %>
+        <% end %>
+        <div class="hover-state">
+          <h3 class="uppercase mb8"><%= @portfolios[0].title %></h3>
         </div>
+      </div>
+      <% @portfolios[1..2].each do |port| %>
+        <div class="col-sm-6 px-xs-0">
+          <div class="image-tile hover-tile mb-sm-0">
+            <%= link_to "https://vimeo.com/#{@portfolios[0].video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
+              <%= image_tag port.image.src, alt: port.image.alt %>
+            <div class="hover-state">
+              <h3 class="uppercase mb8"><%= port.title %></h3>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div>
+        <%= link_to t('frontend.buttons.learnmore'), portfolios_path, class: 'btn btn-lg my-xs-20' %>
       </div>
     </div>
   </div>
-  <div class="video-text">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-    </p>
-  </div>
-</div>
-<div>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus aperiam voluptatum quisquam commodi blanditiis repudiandae ut eos a numquam eligendi veritatis voluptas ratione quos iste rerum dignissimos itaque adipisci sit, hic debitis veniam magni dolor dolores. Vero facilis hic libero adipisci. Magni vel nisi illum praesentium, exercitationem quidem porro inventore eum! Pariatur et rem animi, voluptates modi! Assumenda voluptates doloremque distinctio accusamus, blanditiis eum quasi quo nobis. Consequuntur accusamus voluptatum sit culpa soluta, eaque enim dolor laboriosam vitae, animi itaque consequatur. Explicabo sint facere voluptatum doloribus ex fugiat, voluptatibus tempora quidem ad, animi rem sapiente velit illum, soluta aliquid iure.
-  </p>
-</div>
+</section>
 
-<script type="text/javascript">
-//   $(function() {
-//     videobgEnlarge();
-//   });
-// });
+<section class="section-40">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h4 class="uppercase mb64 mb-xs-40"><%= t('frontend.homepage.clients') %></h4>
+      </div>
+    </div>
+    <!--end of row-->
+    <div class="row">
+      <div class="logo-carousel">
+        <ul class="slides">
+          <% @clients.each do |client| %>
+          <li>
+            <%= image_tag client.image.src, alt: client.name %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <!--end of logo slider-->
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>
+
+<script>
+  $( document ).on('turbolinks:load', function() {
+    $('.venobox').venobox();
+    $('.logo-carousel').flexslider({
+      minItems: 1,
+      maxItems: 4,
+      move: 1,
+      itemWidth: 200,
+      itemMargin: 0,
+      animation: "slide",
+      slideshow: true,
+      slideshowSpeed: 3000,
+      directionNav: false,
+      controlNav: false
+    }); 
+  });
 </script>
+
+
+
