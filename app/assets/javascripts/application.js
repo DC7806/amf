@@ -7,5 +7,4 @@
 //= require smooth_scroll
 //= require scripts
 //= require venobox
-//= require background_video
 //= require turbolinks

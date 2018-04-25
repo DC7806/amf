@@ -1,17 +1,59 @@
-<div class="container">
-<% @portfolios.each do |port| %>
-  <div class="my-xs-20">
-    <%= link_to "https://vimeo.com/#{port.video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>  
-      <%= image_tag port.image.src, alt: port.image.alt, style: 'width: 100%' %>
+<section class="section-40 py-xs-0 text-center">
+  <div class="image-tile hover-tile mb-sm-0">
+    <%= link_to "https://vimeo.com/#{@portfolios[0].video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
+      <%= image_tag @portfolios[0].image.src, alt: @portfolios[0].image.alt %>
     <% end %>
-    <h1><%= port.title %></h1>
-    <p><%= port.description %></p>
+    <div class="hover-state">
+      <h3 class="uppercase mb8"><%= @portfolios[0].title %></h3>
+    </div>
   </div>
-<% end %>
-</div>
+</section>
+
+<section class="bg-secondary">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <!-- <h3 class="mb64 uppercase"></h3> -->
+        <div class="testimonials text-slider slider-arrow-controls">
+          <ul class="slides">
+            <% @portfolios[1..-5].each do |port| %>
+            <li>
+              <%= link_to "https://vimeo.com/#{port.video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
+                <%= image_tag port.image.src, alt: port.image.alt %>
+              <% end %>
+              <h3 class="mt-xs-15 mb-xs-0"><%= port.title %></h3>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>
+
+<section class="py-xs-0">
+  <div class="container-fluid">
+    <div class="row">
+    <% @portfolios.last(4).each do |port| %>
+      <div class="col-sm-6 px-xs-0">
+        <div class="image-tile hover-tile mb-sm-0">
+          <%= link_to "https://vimeo.com/#{port.video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
+            <%= image_tag port.image.src, alt: port.image.alt %>
+          <div class="hover-state">
+            <h3 class="uppercase mb8"><%= port.title %></h3>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</section>
 
 <script>
   $( document ).on('turbolinks:load', function() {
-    $('.venobox').venobox(); 
+    $('.venobox').venobox();
   });
 </script>

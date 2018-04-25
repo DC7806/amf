@@ -5729,7 +5729,13 @@ img {
  overflow: hidden;
  display: block;
  position: relative;
- padding-bottom: 60px;
+ padding-bottom: 78px;
+}
+
+@media screen and (min-width: 398px) {
+.main-wrapper {
+ padding-bottom: 54px;
+}  
 }
 
 .full-screen {
