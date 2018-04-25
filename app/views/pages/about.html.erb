@@ -1,1 +1,36 @@
-<%= render 'inquiries/form', inquiry: @inquiry %>
+<section class="full-screen quarter" style="background-image: url(<%= @about_banner %>)"></section>
+
+<section class="section-40 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h1><%= t('frontend.about-us.intro') %></h1>
+        <%= @about_description %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-40 text-center">
+  <div class="container-fluid">
+    <div class="row">
+      <h2><%= t('frontend.about-us.team') %></h2>
+      <% @teams.each do |team| %>
+      <div class="col-sm-6 col-md-4 px-xs-0">
+        <%= image_tag team.image.src, alt:team.name %>
+        <h3><%= team.name %></h3>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-40">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center"><%= t('frontend.about-us.contact') %></h2>
+      <%= render 'inquiries/form', inquiry: @inquiry %>
+    </div>
+  </div>
+</section>

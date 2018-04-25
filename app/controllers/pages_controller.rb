@@ -13,6 +13,10 @@ class PagesController < ApplicationController
 
   def about
     @inquiry = Inquiry.new
+    content = Content.where(page: 'about-us').eager_load(:text_translations, :string_translations).first
+    @about_banner = content.image.src.url
+    @about_description = content.description.html_safe
+    @teams = Team.order(sort: :asc).eager_load(:text_translations, :string_translations).includes(:image)
   end
 
 end
