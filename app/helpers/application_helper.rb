@@ -52,11 +52,30 @@ module ApplicationHelper
 
   end
 
-  # <a href="#">ENG</a>
-  # <ul>
-  #   <li>
-  #     <a href="#">French</a>
-  #   </li>
-  # </ul>
+  def contact_info info, locale
+    case locale
+    when :en
+      (content_tag :h5, t('frontend.about-us.number'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('en')['number'], class: 'mb-xs-10')+
+      (content_tag :h5, t('frontend.about-us.email'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('en')['email'], class: 'mb-xs-10')+
+      (content_tag :h5, t('frontend.about-us.address'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('en')['address'], class: 'mb-xs-0')
+    when :'zh-TW'
+      (content_tag :h5, t('frontend.about-us.number'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('zh_tw')['number'], class: 'mb-xs-10')+
+      (content_tag :h5, t('frontend.about-us.email'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('zh_tw')['email'], class: 'mb-xs-10')+
+      (content_tag :h5, t('frontend.about-us.address'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('zh_tw')['address'], class: 'mb-xs-0')
+    when :'zh-CN'
+      (content_tag :h5, t('frontend.about-us.number'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('zh_cn')['number'], class: 'mb-xs-10')+
+      (content_tag :h5, t('frontend.about-us.email'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('zh_cn')['email'], class: 'mb-xs-10')+
+      (content_tag :h5, t('frontend.about-us.address'), class: 'mb-xs-5')+
+      (content_tag :p, info.fetch('zh_cn')['address'], class: 'mb-xs-0')
+    end
+  end
 
 end

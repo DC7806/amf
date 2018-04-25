@@ -54,14 +54,14 @@ gem 'jquery-fileupload-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-rails'
 gem 'font-ionicons-rails'
+# deploy
 gem 'whenever', require: false
 gem 'capistrano3-delayed-job', '~> 1.0'
-# api
-gem 'httparty', git: 'https://github.com/jnunemaker/httparty.git', branch: 'master'
+gem 'sitemap_generator', require: true 
 
 group :production do
   # sitemap
-  gem 'sitemap_generator', require: true 
+  # gem 'sitemap_generator', require: true 
 end
 
 group :development, :test do

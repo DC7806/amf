@@ -17,6 +17,8 @@ class PagesController < ApplicationController
     @about_banner = content.image.src.url
     @about_description = content.description.html_safe
     @teams = Team.order(sort: :asc).eager_load(:text_translations, :string_translations).includes(:image)
+    @contact_info = YAML::load_file("#{Rails.root}/yamls/about.yml")
+    @about_contact_info = Image.where(page: 'about-us', section: 'contact-info').first
   end
 
 end

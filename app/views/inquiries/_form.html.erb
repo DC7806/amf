@@ -1,7 +1,6 @@
 <%= form_for inquiry do |f| %>
-  <div class="form-inside mt-sm-30">
-    <h2 class="text-center"><%#= t('frontend.contact.contact_us') %></h2>
-    <div class="form-group col-sm-12 mt-sm-15">
+  <div class="form-inside col-md-10 col-md-offset-1">
+    <div class="form-group col-sm-12">
       <%= f.select :prefix, options_for_select([[t('frontend.contact.mr')],[t('frontend.contact.ms')]]), {include_blank: " - #{t('frontend.contact.prefix')} - "}, class: "form-control" %>
     </div>
     <%= name_order f, I18n.locale %>
@@ -25,7 +24,7 @@
       <%= recaptcha_tags %>  
     </div>
     <div class="form-group col-sm-6">
-      <%= f.submit t('frontend.buttons.submit'), class: "btn btn-default btn-md btn-style-2 width-100" %>
+      <%= f.submit t('frontend.buttons.submit'), class: "btn btn-dark btn-md width-100" %>
     </div>
   </div>
 <% end %>

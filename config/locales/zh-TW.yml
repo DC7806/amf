@@ -3,10 +3,9 @@ zh-TW:
   frontend:
     buttons:
       learnmore: 瞭解更多
-      submit: 確認送出
       enter: 點擊進入
+      submit: 確認送出
     contact:
-      email: Email
       first_name: 名
       last_name: 姓
       message: 訊息內容
@@ -15,8 +14,17 @@ zh-TW:
       prefix: 稱謂
       subject: 訊息標題
       mr: 先生
+      email: Email
     nav:
       about-us: 關於AMF
       portfolios: 作品集
     homepage:
       clients: 客戶
+    about-us:
+      info: 聯絡資訊
+      number: 電話
+      email: Email
+      address: 地址
+      message: 訊息
+      title: 關於AMF
+      team: 團隊成員

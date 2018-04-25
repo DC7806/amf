@@ -1,13 +1,13 @@
 ---
 zh_tw:
-  address: '1'
-  number: '1'
-  email: '1'
+  address: address_tw
+  number: number_tw
+  email: email_tw
 zh_cn:
-  address: '2'
-  number: '2'
-  email: '2'
+  address: address_cn
+  number: number_cn
+  email: email_cn
 en:
-  address: ''
-  number: ''
-  email: ''
+  address: address_en
+  number: number_en
+  email: email_en

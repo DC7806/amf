@@ -96,7 +96,8 @@
           </a>
           <ul class="treeview-menu">
             <li><%= link_to '簡介', edit_admin_content_path(@about_intro.id) %></li>
-            <li><%= link_to '聯絡資訊', admin_about_us_path %></li>
+            <li><%= link_to '聯絡資訊圖片', edit_admin_image_path(@about_contact_info.id) %></li>
+            <li><%= link_to '聯絡資訊文字', admin_about_us_path %></li>
           </ul>
         </li>
         <li>

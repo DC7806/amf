@@ -4,32 +4,45 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
-        <h1><%= t('frontend.about-us.intro') %></h1>
+        <h1><%= t('frontend.about-us.title') %></h1>
         <%= @about_description %>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section-40 text-center">
+<section class="section-40 text-center pt-sm-0">
   <div class="container-fluid">
     <div class="row">
       <h2><%= t('frontend.about-us.team') %></h2>
       <% @teams.each do |team| %>
       <div class="col-sm-6 col-md-4 px-xs-0">
         <%= image_tag team.image.src, alt:team.name %>
-        <h3><%= team.name %></h3>
+        <h4 class="mb-xs-5"><%= team.name %></h4>
+        <p class="mb-xs-10"><%= team.description %></p>
       </div>
       <% end %>
     </div>
   </div>
 </section>
-
+<section class="section-40">
+  <div class="container-fluid bg-secondary">
+    <div class="row flex-sm">
+      <div class="col-sm-6 px-xs-0 bk-hidden-xs" style="background: url(<%= @about_contact_info.src.url %>) center">
+        <%= image_tag @about_contact_info.src, class: 'visible-xs-block' %>    
+      </div>
+      <div class="col-sm-6 py-xs-15 px-sm-30 py-sm-30 py-md-40">
+        <h2 class="mb-xs-10"><%= t('frontend.about-us.info') %></h2>
+        <div><%= contact_info(@contact_info, I18n.locale) %></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section-40">
   <div class="container">
     <div class="row">
-      <h2 class="text-center"><%= t('frontend.about-us.contact') %></h2>
+      <h2 class="text-center"><%= t('frontend.about-us.message') %></h2>
       <%= render 'inquiries/form', inquiry: @inquiry %>
     </div>
   </div>

@@ -3,10 +3,9 @@ en:
   frontend:
     buttons:
       learnmore: Learn More
-      submit: Summit
       enter: Enter
+      submit: Submit
     contact:
-      email: email
       first_name: First Name
       last_name: Last Name
       message: Message
@@ -15,8 +14,17 @@ en:
       prefix: Prefix
       subject: Subject
       mr: Mr.
+      email: Email
     nav:
       about-us: About Us
       portfolios: Portfolios
     homepage:
       clients: Clients
+    about-us:
+      info: Contact Info
+      number: Number
+      email: Email
+      address: Address
+      message: Message
+      title: About AMF
+      team: Meet The Team

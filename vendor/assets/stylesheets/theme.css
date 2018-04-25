@@ -571,7 +571,7 @@ ul.lead li {
 /*!---------- 5. SECTIONS ----------*/
 section,
 footer {
-  padding: 96px 0;
+  /* padding: 96px 0; */
   position: relative;
   overflow: hidden;
 }
@@ -1877,7 +1877,7 @@ select {
   padding-left: 20px;
   position: relative;
   font-size: 11px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: bold;
   letter-spacing: 1px;
   color: #777;
@@ -5756,6 +5756,22 @@ img {
 .section-40 {
   padding: 40px 0;
 }
+.flex-sm {
+  display: flex;
+}
+}
+
+.btn-dark {
+  background: #fff!important;
+  border-color: #292929 !important;
+  color: #292929!important;
+  opacity: .5!important;
+}
+
+.btn-dark:hover {
+  background: #292929!important;
+  border-color: #292929 !important;
+  color: #fefefe!important;
 }
 
 /* nav */
@@ -5778,4 +5794,10 @@ footer {
 /* contact */
 textarea.form-control {
   min-height: 300px;
+}
+
+@media screen and (max-width: 767px) {
+.bk-hidden-xs {
+  background: unset!important
+}
 }
