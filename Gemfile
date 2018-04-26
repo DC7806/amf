@@ -57,14 +57,16 @@ gem 'font-ionicons-rails'
 # deploy
 gem 'whenever', require: false
 gem 'capistrano3-delayed-job', '~> 1.0'
-gem 'sitemap_generator', require: true 
 
 group :production do
   # sitemap
-  # gem 'sitemap_generator', require: true 
+  gem 'sitemap_generator', require: true 
 end
 
 group :development, :test do
+  gem 'capistrano', '~> 3.10', '>= 3.10.1'
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
+  gem 'capistrano-rbenv', git: 'https://github.com/capistrano/rbenv.git', branch: 'master'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

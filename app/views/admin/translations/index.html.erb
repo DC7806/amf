@@ -1,5 +1,5 @@
 <%= render 'layouts/admin/search', path: admin_translations_path %>
-<%= form_for :translations, url: update_all_admin_translations_path, html: {method: :patch} do %>
+<%= form_tag update_all_admin_translations_path, method: :patch do %>
   <% @admin_translations.each do |translation| %>
   <div class="form-group col-sm-4">
     <%= fields_for "admin_translation[]", translation do |f| %>
