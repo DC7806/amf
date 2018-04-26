@@ -337,9 +337,9 @@ $(document).ready(function() {
             animation: "slide",
             directionNav: false
         });
-        $('.slider-arrow-controls').flexslider({
-            controlNav: false
-        });
+        // $('.slider-arrow-controls').flexslider({
+        //     controlNav: false
+        // });
         $('.slider-thumb-controls .slides li').each(function() {
             var imgSrc = $(this).find('img').attr('src');
             $(this).attr('data-thumb', imgSrc);

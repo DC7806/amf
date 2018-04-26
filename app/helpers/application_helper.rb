@@ -78,4 +78,8 @@ module ApplicationHelper
     end
   end
 
+  def analytics_tracking tracking_id
+    render 'layouts/google_analytics' if tracking_id.present?
+  end
+
 end

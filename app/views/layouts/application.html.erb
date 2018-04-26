@@ -17,6 +17,7 @@
       <%= render 'layouts/nav' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+      <%= analytics_tracking @ga_id %>
     </div>
   </body>
 </html>
