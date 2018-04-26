@@ -1,1 +1,5 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+
+Sitemap: https://www.amfcreative.co/sitemap-zh-TW.xml
+Sitemap: https://www.amfcreative.co/sitemap-zh-CN.xml
+Sitemap: https://www.amfcreative.co/sitemap-en.xml
