@@ -133,10 +133,11 @@ $(document).ready(function() {
     });
 
     // Mobile Menu
-
-    $('.mobile-toggle').click(function() {
-        $('.nav-bar').toggleClass('nav-open');
-        $(this).toggleClass('active');
+    $( document ).on('turbolinks:load', function() {
+        $('.mobile-toggle').click(function() {
+            $('.nav-bar').toggleClass('nav-open');
+            $(this).toggleClass('active');
+        });
     });
 
     $('.menu li').click(function(e) {

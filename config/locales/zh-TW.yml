@@ -15,6 +15,8 @@ zh-TW:
       subject: 訊息標題
       mr: 先生
       email: Email
+      message_sent: 訊息已送出
+      message_failed: 訊息傳送失敗
     nav:
       about-us: 關於AMF
       portfolios: 作品集

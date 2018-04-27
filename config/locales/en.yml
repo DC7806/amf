@@ -15,6 +15,8 @@ en:
       subject: Subject
       mr: Mr.
       email: Email
+      message_sent: Message Sent
+      message_failed: Message Fails Sending
     nav:
       about-us: About Us
       portfolios: Portfolios

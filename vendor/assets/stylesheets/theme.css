@@ -5792,6 +5792,22 @@ footer {
 
 /* homepage */
 /* contact */
+.msg{
+    padding: 15px;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    font-size: 2.3rem;
+    font-weight: 400;
+    top: 55px;
+}
+.msg-failed {
+    background: rgba(233, 237, 7, 0.82);    
+}
+.msg-sent {
+    background: rgba(139, 228, 5, 0.82);
+}    
+
 textarea.form-control {
   min-height: 300px;
 }
