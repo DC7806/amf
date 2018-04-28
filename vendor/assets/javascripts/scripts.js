@@ -138,16 +138,17 @@ $(document).ready(function() {
             $('.nav-bar').toggleClass('nav-open');
             $(this).toggleClass('active');
         });
-    });
+    
 
-    $('.menu li').click(function(e) {
-        if (!e) e = window.event;
-        e.stopPropagation();
-        if ($(this).find('ul').length) {
-            $(this).toggleClass('toggle-sub');
-        } else {
-            $(this).parents('.toggle-sub').removeClass('toggle-sub');
-        }
+        $('.menu li').click(function(e) {
+            if (!e) e = window.event;
+            e.stopPropagation();
+            if ($(this).find('ul').length) {
+                $(this).toggleClass('toggle-sub');
+            } else {
+                $(this).parents('.toggle-sub').removeClass('toggle-sub');
+            }
+        });
     });
 
     $('.menu li a').click(function() {

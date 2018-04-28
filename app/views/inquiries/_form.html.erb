@@ -21,7 +21,7 @@
       <%= f.text_area :message, class: "text-area form-control" %>
     </div>
     <div class="form-group col-sm-6">
-      <%= recaptcha_tags %>  
+      <%= recaptcha_tags ajax: true%>  
     </div>
     <div class="form-group col-sm-6">
       <%= f.submit t('frontend.buttons.submit'), class: "btn btn-dark btn-md width-100" %>
