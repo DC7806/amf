@@ -73,7 +73,7 @@ class ApplicationController < ActionController::Base
               title:       Metum.find_page(controller_name).og_title,
               url:         request.url,
               description: Metum.find_page(controller_name).og_description,
-              image:       (root_url + Metum.find_page(controller_name).og_image.url if Metum.find_page(controller_name).og_image.url.present?)}
+              image:       (Figaro.env.domain + Metum.find_page(controller_name).og_image.url if Metum.find_page(controller_name).og_image.url.present?)}
     elsif controller_name == 'pages'
       @title = Metum.find_page(action_name).title
       @meta_desc = Metum.find_page(action_name).description
@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
               title:       Metum.find_page(action_name).og_title,
               url:         request.url,
               description: Metum.find_page(action_name).og_description,
-              image:       (root_url+Metum.find_page(action_name).og_image.url if Metum.find_page(action_name).og_image.url.present?)}
+              image:       (Figaro.env.domain + Metum.find_page(action_name).og_image.url if Metum.find_page(action_name).og_image.url.present?)}
     end
   end
 
