@@ -21,7 +21,7 @@
               <%= link_to "https://vimeo.com/#{port.video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
                 <%= image_tag port.image.src, alt: port.image.alt %>
               <% end %>
-              <h3 class="mt-xs-15 mb-xs-0"><%= port.title %></h3>
+              <h3 class="mb-xs-0 fz-20"><%= port.title %></h3>
             </li>
             <% end %>
           </ul>
@@ -42,7 +42,7 @@
           <%= link_to "https://vimeo.com/#{port.video_src}?autoplay=1", class: 'venobox', 'data-vbtype': 'video' do %>
             <%= image_tag port.image.src, alt: port.image.alt %>
           <div class="hover-state">
-            <h3 class="uppercase mb8"><%= port.title %></h3>
+            <h3 class="uppercase mb8 fz-20"><%= port.title %></h3>
           </div>
           <% end %>
         </div>

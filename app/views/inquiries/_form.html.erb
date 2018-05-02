@@ -1,7 +1,7 @@
 <%= form_for inquiry do |f| %>
   <div class="form-inside col-md-10 col-md-offset-1">
     <div class="form-group col-sm-12">
-      <%= f.select :prefix, options_for_select([[t('frontend.contact.mr')],[t('frontend.contact.ms')]]), {include_blank: " - #{t('frontend.contact.prefix')} - "}, class: "form-control" %>
+      <%= f.select :prefix, options_for_select([[t('frontend.contact.mr')],[t('frontend.contact.ms')]]), {include_blank: " - #{t('frontend.contact.prefix')} - "}, class: "form-control mb-xs-0" %>
     </div>
     <%= name_order f, I18n.locale %>
     <div class="form-group col-sm-6">

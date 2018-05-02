@@ -1723,8 +1723,8 @@ input[type="password"] {
 }
 input[type="text"],
 input[type="password"] {
-  background: #f5f5f5;
-  border: none;
+  /* background: #f5f5f5;
+  border: none; */
   width: 100%;
   height: 50px;
   padding-left: 20px;
@@ -5732,6 +5732,10 @@ img {
  padding-bottom: 78px;
 }
 
+.fz-20 {
+  font-size: 20px;
+}
+
 @media screen and (min-width: 398px) {
 .main-wrapper {
  padding-bottom: 54px;
@@ -5792,6 +5796,11 @@ footer {
 
 /* homepage */
 /* contact */
+.team-desc > h4,
+.team-desc > p {
+  display: inline
+}
+
 .msg{
     padding: 15px;
     position: absolute;

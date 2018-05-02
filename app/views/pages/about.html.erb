@@ -18,8 +18,10 @@
       <% @teams.each do |team| %>
       <div class="col-sm-6 col-md-4 px-xs-0">
         <%= image_tag team.image.src, alt:team.name %>
-        <h4 class="mb-xs-5"><%= team.name %></h4>
-        <p class="mb-xs-10"><%= team.description %></p>
+        <div class="team-desc">
+          <h4 class="mb-xs-5 fz-20"><%= team.name %></h4>
+          <p class="mb-xs-10"> / <%= team.description %></p>
+        </div>
       </div>
       <% end %>
     </div>

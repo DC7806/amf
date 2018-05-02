@@ -10,9 +10,9 @@ class Translation < ApplicationRecord
   private
 
   def write_to_yaml
-    {'zh-TW': 'tw', 'zh-CN': 'cn', 'en': 'en'}.each do |file_name, lang|
+    {'zh-TW' => 'tw', 'zh-CN' => 'cn', 'en' => 'en'}.each do |file_name, lang|
       group = Translation.all.map do |trans|
-                key_to_array = trans.key.split('.').unshift(file_name.to_s)
+                key_to_array = trans.key.split('.').unshift(file_name)
                 key_to_array.reverse.inject(trans.send(lang)) { |v, k| { k => v } }
               end.reduce(&:deep_merge)
       File.write("#{Rails.root}/config/locales/#{file_name}.yml", group.to_yaml)
