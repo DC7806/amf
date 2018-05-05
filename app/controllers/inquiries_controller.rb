@@ -10,9 +10,12 @@ class InquiriesController < ApplicationController
       flash[:notice] = t('frontend.contact.message_sent')
     else
       # for rendered template
-      # @contacts = YAML::load_file("#{Rails.root}/config/contacts.yml")
-      # @contacts_hq_zh = @contacts.slice('hq_zh')
-      # @contacts_hq_en = @contacts.slice('hq_en')
+      content = Content.where(page: 'about-us').eager_load(:text_translations, :string_translations).first
+      @about_banner = content.image.src.url
+      @about_description = content.description.html_safe
+      @teams = Team.order(sort: :asc).eager_load(:text_translations, :string_translations).includes(:image)
+      @contact_info = YAML::load_file("#{Rails.root}/yamls/about.yml")
+      @about_contact_info = Image.where(page: 'about-us', section: 'contact-info').first
       flash[:alert] = t('frontend.contact.message_failed')
       render template: 'pages/about', layout: true
     end
