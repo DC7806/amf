@@ -1,4 +1,14 @@
-<p>new message</p>
-<p>----------------------------</p>
-<h1><%= @inquiry.last_name %></h1>
+<h2>基本資料</h2>
+<p>稱謂：<%= @inquiry.prefix %></p>
+<p>姓氏：<%= @inquiry.first_name %></p>
+<p>姓名：<%= @inquiry.last_name %></p> 
+<hr style="margin:10px 0;">
+<h2>聯繫方式</h2>
+<p>電話：<%= @inquiry.number %></p> 
+<p>Email：<%= @inquiry.email %></p> 
+<hr style="margin:10px 0;">
+<h2>訊息內容</h2>
+<p>主旨：</p>
+<p><%= @inquiry.subject %></p>
+<p>內容：</p> 
 <p><%= @inquiry.message %></p>

@@ -1,5 +1,10 @@
-<h1><%= @inquiry.last_name %></h1>
-
+<h1>[系統自動信件請勿回覆]</h1>
+<p>Hi <%= @inquiry.first_name %>,</p>
+<p>我們已經收到以下訊息，將會在最快時間回覆，謝謝！</p>
+<hr style="margin:10px 0;">
+<p>主旨：</p>
+<p><%= @inquiry.subject %></p>
+<p>內容：</p>
 <p><%= @inquiry.message %></p>
-
-<p>will get back to you soon</p>
+<hr style="margin:10px 0;">
+<p style="margin-top: 40px">AMF Creative</p>
