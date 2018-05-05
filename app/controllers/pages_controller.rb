@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_action :page_meta, only: :homepage
+  before_action :page_meta
   
   def homepage
     @homepage_banner = Image.where(page: 'homepage', section: 'banner').eager_load(:string_translations).first.src.url
