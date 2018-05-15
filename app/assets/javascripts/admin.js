@@ -6,6 +6,7 @@
 //= require adminlte
 //= require dropify
 //= require ckeditor/init
+//= require shared
 //= require_self
 
 

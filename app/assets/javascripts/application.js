@@ -7,4 +7,5 @@
 //= require smooth_scroll
 //= require scripts
 //= require venobox
+//= require shared
 //= require turbolinks

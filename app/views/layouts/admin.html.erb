@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-black sidebar-mini">
+<%= notice_msg %>
 <div class="wrapper">
   <!-- Main Header -->
   <header class="main-header">
@@ -138,9 +139,7 @@
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content container-fluid">
-    <div id="notification" class="form-group text-center">  
-      <%#= notice_msg %>
-    </div>
+      
       <%= yield %>
     </section>
     <!-- /.content -->

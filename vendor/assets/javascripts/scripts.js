@@ -1387,5 +1387,3 @@ var mr_cookies = {
 /*\
 |*|  END COOKIE LIBRARY
 \*/
-
-

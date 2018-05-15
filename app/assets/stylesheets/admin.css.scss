@@ -4,7 +4,8 @@
 *= require skin-black
 *= require dropify
 *= require_self
-*= require ./share/spacing
+*= require ./shared/spacing
+*= require ./shared/notification
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";

@@ -15,7 +15,7 @@
   <body>
     <div class="main-wrapper">
       <%= render 'layouts/nav' %>
-      <%= frontend_notice_msg %>
+      <%= notice_msg %>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= analytics_tracking @ga_id %>
