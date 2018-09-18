@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form'
 gem 'kaminari'
 gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git', branch: 'master'#, github: 'galetahub/ckeditor'
-gem 'delayed_job_active_record'
 gem "figaro"
 # gem 'settingslogic'
 gem "breadcrumbs_on_rails"
@@ -56,6 +55,7 @@ gem 'font-ionicons-rails'
 # deploy
 gem 'whenever', require: false
 gem 'capistrano3-delayed-job', '~> 1.0'
+gem 'delayed_job_active_record'
 
 group :production do
   # sitemap

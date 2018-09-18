@@ -14,12 +14,8 @@ class Admin::StaticContentsController < AdminController
     else
       @system = find_static_contents('system')
       system_images = Admin::Image.where(page: 'nav', section: ['logo','favicon'])
-      @admin_logo = system_images.select{|image|
-        image.section == 'logo'
-      }.first
-      @admin_favicon = system_images.select{|image|
-        image.section == 'favicon'
-      }.first
+      @admin_logo = system_images.select{ |image| image.section == 'logo' }.first
+      @admin_favicon = system_images.select{ |image| image.section == 'favicon' }.first
     end
   end
 
